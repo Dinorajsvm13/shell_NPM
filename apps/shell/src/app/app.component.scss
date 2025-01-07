@@ -1,0 +1,31 @@
+.remote-menu {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-top: 0.5rem;
+
+  }
+  
+  .remote-menu li {
+    display: inline;
+  }
+  
+  .remote-menu a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem; /* Small size */
+    color: #007bff; /* Bootstrap primary color */
+    border-radius: 0.25rem;
+    background-color: #f8f9fa; /* Light gray background */
+    border: 1px solid #ddd; /* Subtle border */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+  }
+  
+  .remote-menu a:hover {
+    background-color: #e9ecef; /* Darker gray on hover */
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: none;
+  }
+  

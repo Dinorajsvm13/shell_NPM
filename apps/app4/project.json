@@ -1,0 +1,106 @@
+{
+  "name": "app4",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "shell",
+  "sourceRoot": "apps/app4/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/app4",
+        "index": "apps/app4/src/index.html",
+        "main": "apps/app4/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/app4/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/app4/src/favicon.ico", "apps/app4/src/assets"],
+        "styles": ["apps/app4/src/styles.scss"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/app4/webpack.config.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/app4/webpack.prod.config.ts"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nx/angular:dev-server",
+      "options": {
+        "port": 4304,
+        "publicHost": "http://localhost:4304"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "app4:build:production"
+        },
+        "development": {
+          "buildTarget": "app4:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "app4:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/app4/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "app4:build",
+        "port": 4304,
+        "watch": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "app4:build:development"
+        },
+        "production": {
+          "buildTarget": "app4:build:production"
+        }
+      }
+    }
+  }
+}
