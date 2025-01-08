@@ -7,8 +7,7 @@ import { ContainerComponent } from './_container/container.component';
 
 @NgModule({
   declarations: [ContainerComponent],
-  imports: [CommonModule, RouterModule.forChild(remoteRoutes),
-  ],
+  imports: [CommonModule, RouterModule.forChild(remoteRoutes)],
   providers: [],
 })
 export class MackAngularModule { 

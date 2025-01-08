@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'shared-input',
+  selector: 'shell-input',
   standalone: true,
   imports: [CommonModule,FormsModule],
   templateUrl: './input.component.html',
-  styleUrl: './input.component.css',
+  styleUrl: './input.component.scss',
 })
 export class InputComponent {
-  inputValue:string=''
+    inputValue:string=''
   @Input() placeholder:string='Enter Value 01'
 }

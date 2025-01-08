@@ -8,7 +8,9 @@
     "build:app2": "nx build app2 --base-href /shell/app2/",
     "build:app3": "nx build app3 --base-href /shell/app3/",
     "build:app4": "nx build app4 --base-href /shell/app4/",
-    "build:all": "npm-run-all build:shell build:app1 build:app2 build:app3 build:app4"
+    "build:all": "npm-run-all build:shell build:app1 build:app2 build:app3 build:app4",
+    "comp": "nx generate @nx/angular:component ",
+    "lib": "nx generate @nx/angular:library  --directory libraries --buildable "
   },
   "private": true,
   "dependencies": {
@@ -21,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~17.1.0",
     "@angular/router": "~17.1.0",
     "@nx/angular": "17.3.2",
+    "@shell/shared-elements": "^0.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

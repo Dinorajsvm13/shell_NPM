@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@shell/elements": ["libs/elements/src/index.ts"],
+      "@shell/libraries/elements": ["libs/libraries/elements/src/index.ts"],
       "@shell/shared": ["libs/shared/src/index.ts"]
     }
   },

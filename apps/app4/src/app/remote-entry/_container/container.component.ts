@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { InputComponent } from '@shell/shared';
+import { InputComponent } from '@shell/libraries/elements';
 
 @Component({
   selector: 'shell-app2-container',
