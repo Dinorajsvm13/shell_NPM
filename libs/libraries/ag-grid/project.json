@@ -1,0 +1,36 @@
+{
+  "name": "libraries-ag-grid",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/libraries/ag-grid/src",
+  "prefix": "shell",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/libraries/ag-grid/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/libraries/ag-grid/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/libraries/ag-grid/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/libraries/ag-grid/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

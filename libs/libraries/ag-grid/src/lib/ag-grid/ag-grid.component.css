@@ -1,0 +1,123 @@
+.mat-menu-grid img {
+    min-height: 22px;
+}
+
+.mat-menu-grid p {
+    font-size: 10px;
+    margin-bottom: 0;
+    line-height: normal;
+    text-wrap: nowrap;
+}
+
+::ng-deep .mat-mdc-menu-panel {
+    max-width: 536px;
+    border-radius: 10px;
+}
+
+.mat-menu-grid button {
+    text-align: center;
+    padding: 0;
+}
+
+div.col-2 {
+    padding: 0;
+    margin: 0.4rem;
+}
+
+.ag-toolBarLnd {
+    border: 1px solid #bdc3c7;
+    border-bottom: 0;
+    background: #f5f7f7;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.totalCount {
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.ag-menuIcn {
+    font-size: 16px !important;
+    height: 14px !important;
+    width: 14px !important;
+    margin-top: 2px;
+    margin-left: 5px;
+}
+
+.ag-menu-name {
+    font-size: 12px;
+    line-height: normal;
+}
+
+.ag-menu-spacing {
+    padding: 10px;
+}
+
+.active {
+    background-color: #2196f3 !important;
+    color: var(--mack-white) !important;
+}
+
+.chip {
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: var(--mack-black);
+    background-color: #f1f1f1;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.chip:hover {
+    background-color: lightgray;
+}
+
+.templateIcon {
+    display: flex;
+    align-items: center;
+    color: var(--mack-secondary);
+    margin-left: 5px;
+}
+
+.active .templateIcon {
+    color: var(--mack-white) !important;
+}
+
+::ng-deep .p-overlaypanel ::ng-deep .p-overlaypanel-content {
+    padding: 0 !important;
+}
+
+
+.mdc-evolution-chip-set .mdc-evolution-chip {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ .sm-grid {
+  border: 2px solid #3b9ff3 !important;
+  margin: 0;
+  border-radius: 12px;
+}
+::ng-deep .cdk-overlay-pane {
+  border-radius: 11px;
+}
+::ng-deep .mat-mdc-menu-content {
+  padding: 0;
+}
+::ng-deep .mat-chip-option{
+  margin: 0;
+}
+::ng-deep .mat-mdc-chip.mat-mdc-standard-chip  {
+  margin-left: 2px !important;
+}
+::ng-deep .mdc-evolution-chip-set .mdc-evolution-chip-set__chips{
+  margin-left: -2px !important;
+}

@@ -1,0 +1,16 @@
+
+::ng-deep .mat-dialog-content {
+  overflow: hidden; /* Prevents content from causing scrollbars */
+}
+
+.prompt-card {
+  overflow: hidden;
+}
+.msg-text {
+  font-size: 13px !important;
+  font-weight: 500;
+}
+.card-header {
+  background-color: #3f80a7;
+  color: var(--mack-white);
+}

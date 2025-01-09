@@ -1,0 +1,101 @@
+<div class="col-sm-12">
+  <ng-container *ngIf="!hideExtraUtils">
+    <div class="col-sm-12 ag-toolBarLnd px-1">
+      <div>
+        <mat-chip-listbox #chipList class="mb-0 mt-0">
+          <mat-chip-listbox class="mb-0 mt-0">
+            <mat-chip-option class="p-2" *ngFor="let chip of saveAsTemplateList; let i=index" color="primary"
+              [removable]="removable"  (selectionChange)="selectAgTemplate(chip)" [selected]="getFirstKey(chip) === selectedItem  ">
+              {{ getFirstKey(chip)}}
+              <mat-icon matChipRemove *ngIf="removable" (click)="deleteTemplate(chip)">cancel</mat-icon>
+            </mat-chip-option>
+          </mat-chip-listbox>
+        </mat-chip-listbox>
+
+      </div>
+      <div class="d-flex justify-content-end align-items-center gap-2">
+        <div class="mt-1">
+          <span class="m-0" class="totalCount">Total Records: {{ totalRowCount }}</span>
+        </div>
+        <div>
+          <mat-icon class="cursor pt-1 me-1" [matMenuTriggerFor]="agToolbar">apps
+          </mat-icon>
+          <mat-menu #agToolbar="matMenu" class="p-profile-container">
+            <!-- First row of options -->
+            <div class="mat-menu-grid sm-grid row">
+              <div class="col-2">
+                <button mat-menu-item (click)="agGridToolbar.saveTemplate();">
+                  <img src="assets/images/ag-grid/ag-top-toolbar/new/save.svg" alt="Save Template" width="20" />
+                  <p>Save Template</p>
+                </button>
+              </div>
+              <div class="col-2">
+                <button mat-menu-item (click)="agGridToolbar.saveAsTemplate();">
+                  <img src="assets/images/ag-grid/ag-top-toolbar/new/saveas_template.svg" alt="Save as Template"
+                    width="20" />
+                  <p>Save as Template</p>
+                </button>
+              </div>
+              <div class="col-2">
+                <button mat-menu-item (click)="agGridToolbar.deleteTemplate();">
+                  <img src="assets/images/ag-grid/ag-top-toolbar/new/delete.svg" alt="Delete Template" width="20" />
+                  <p>Delete Template</p>
+                </button>
+              </div>
+              <div class="col-2">
+                <button mat-menu-item (click)="columnFilter();">
+                  <img src="assets/images/ag-grid/ag-top-toolbar/new/distinct.svg" alt="Distinct Filter" width="20" />
+                  <p>Distinct Filter</p>
+                </button>
+              </div>
+              <div class="col-2">
+                <button mat-menu-item (click)="filter();">
+                  <img src="assets/images/ag-grid/ag-top-toolbar/new/condition.svg" alt="Condition Filter" width="20" />
+                  <p>Condition Filter</p>
+                </button>
+              </div>
+              <!-- <div class="col-2">
+                <button mat-menu-item (click)="columnFilter();">
+                  <img src="assets/images/ag-grid/ag-top-toolbar/new/multiple.svg" alt="Multiple Filter" width="20" />
+                  <p>Multiple Filter</p>
+                </button>
+              </div> -->
+              <div class="col-2">
+                <button mat-menu-item (click)="reset();">
+                  <img src="assets/images/ag-grid/ag-top-toolbar/new/repeat.svg" alt="Reset" width="20" />
+                  <p>Reset</p>
+                </button>
+              </div>
+              <div class="col-2">
+                <button mat-menu-item (click)="exportAsExcel();">
+                  <img src="assets/images/ag-grid/ag-top-toolbar/new/excel.svg" alt="Excel" width="20" />
+                  <p>Excel</p>
+                </button>
+              </div>
+              <div class="col-2">
+                <button mat-menu-item (click)="exportAsCSV();">
+                  <img src="assets/images/ag-grid/ag-top-toolbar/new/CSV.svg" alt="CSV Export" width="20" />
+                  <p>CSV</p>
+                </button>
+              </div>
+            </div>
+          </mat-menu>
+        </div>
+
+
+      </div>
+    </div>
+  </ng-container>
+  <div class="grid">
+    <div class="col-sm-12 ">
+      <ag-grid-angular  [ngStyle]="styler()?styler():height" [domLayout]="rowData.length > 10 && styler()? 'normal': 'autoHeight'"
+         class="ag-theme-balham" [components]="customComponents" [columnDefs]="columnDefs"
+        [defaultColDef]="defaultColDef" (gridReady)="onGridReady($event)"  (filterChanged)="onFilterChanged()"[gridOptions]="gridOptions"
+        [rowGroupPanelShow]="rowGroupPanelShow" [groupDisplayType]="groupDisplayType" [sideBar]="hideExtraUtils ? '':sideBar"
+        [tooltipShowDelay]="tooltipShowDelay" [animateRows]="true" [suppressMenuHide]="true" [masterDetail]="true"
+        [embedFullWidthRows]="true" [rowData]="rowData" [suppressDragLeaveHidesColumns]="true"
+        [pagination]="pagination" [rowSelection]="rowSelection()">
+      </ag-grid-angular>
+    </div>
+  </div>
+</div>

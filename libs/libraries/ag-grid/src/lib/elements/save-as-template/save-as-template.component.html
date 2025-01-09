@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-between border-bottom p-2" mat-dialog-title>
+    <h5>Save As Template</h5>
+    <mat-icon class="cursor" (click)="dialogClose('false')">close</mat-icon>
+</div>
+<mat-dialog-content class="p-2">
+    <form [formGroup]="saveAsForm">
+        <div class="px-4">
+            <div>
+                <span>Template Name</span> <span style="color: red"> *</span>
+            </div>
+            <mat-form-field appearance="outline" class="custom-input">
+                <input matInput type="text" class="h-auto" formControlName="templateName" autocomplete="off" maxlength="25"
+                    (keyup)="onChangeInput($event)" />
+            </mat-form-field>
+        </div>
+    </form>
+</mat-dialog-content>
+
+<div mat-dialog-actions class="justify-content-end">
+    <button (click)="dialogClose('true')" mat-button type="button" [class.disableBtn]="!saveAsForm.valid"
+        [disabled]="!saveAsForm.valid" class="vslSelect btnHeight cursor-pointer">
+        SAVE
+    </button>
+    <button mat-button (click)="dialogClose('false')" class="cancel btnHeight cursor-pointer">
+        CANCEL
+    </button>
+</div>
