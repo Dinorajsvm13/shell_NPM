@@ -27,7 +27,7 @@
     "@nx/angular": "17.3.2",
     "@shell/shared-ag-grid": "^0.0.1",
     "@shell/shared-elements": "^0.0.1",
-    "@shell/shared-services": "^0.0.1",
+    "@shell/shared-services": "^0.0.2",
     "ag-grid-angular": "^31.1.1",
     "ag-grid-community": "^31.1.1",
     "ag-grid-enterprise": "^31.1.1",
