@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build:shell": "nx build shell --base-href /shell/",
-    "build:app1": "nx build app1 --base-href /shell/app1/",
-    "build:app2": "nx build app2 --base-href /shell/app2/",
-    "build:app3": "nx build app3 --base-href /shell/app3/",
-    "build:app4": "nx build app4 --base-href /shell/app4/",
+    "build:shell": "nx build shell --base-href /npm/",
+    "build:app1": "nx build app1 --base-href /npm/app1/",
+    "build:app2": "nx build app2 --base-href /npm/app2/",
+    "build:app3": "nx build app3 --base-href /npm/app3/",
+    "build:app4": "nx build app4 --base-href /npm/app4/",
     "build:all": "npm-run-all build:shell build:app1 build:app2 build:app3 build:app4",
     "comp": "nx generate @nx/angular:component ",
     "lib": "nx generate @nx/angular:library  --directory libraries --buildable "
